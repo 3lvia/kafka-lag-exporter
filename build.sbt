@@ -36,7 +36,7 @@ lazy val kafkaLagExporter =
         AkkaSlf4j,
         AkkaStreams,
         AkkaStreamsProtobuf,
-        "org.apache.zookeeper:zookeeper:3.8.3",
+        ZooKeeper,
         AkkaInfluxDB,
         Fabric8Model,
         Fabric8Client,
