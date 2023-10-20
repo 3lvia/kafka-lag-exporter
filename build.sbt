@@ -125,20 +125,20 @@ lazy val kafkaLagExporter =
       skip in publish := true,
       parallelExecution in Test := false,
       releaseProcess := Seq[ReleaseStep](
-        lintHelmChart, // Lint the Helm Chart for errors
+        // lintHelmChart, // Lint the Helm Chart for errors
         checkSnapshotDependencies,
         inquireVersions,
         runClean,
         runTest,
         setReleaseVersion,
-        updateHelmChartRelease, // Update the Helm Chart
-        publishDockerImage, // Publish the Docker images used by the chart
-        packageChart, // Package the Helm Chart
-        buildChartsIndex, // Build Helm Charts index
+        // updateHelmChartRelease, // Update the Helm Chart
+        // publishDockerImage, // Publish the Docker images used by the chart
+        // packageChart, // Package the Helm Chart
+        // buildChartsIndex, // Build Helm Charts index
         packageJavaApp, // Package the standalone Java App
-        updateReadmeRelease, // Update the README.md with this version
-        setNextVersion,
-        updateHelmChartNextVersion // Update the Helm Chart with the next snapshot version
+        // updateReadmeRelease, // Update the README.md with this version
+        // setNextVersion,
+        // updateHelmChartNextVersion // Update the Helm Chart with the next snapshot version
       )
     )
 
