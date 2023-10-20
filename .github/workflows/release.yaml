@@ -10,6 +10,9 @@ jobs:
     # if: github.repository == 'seglo/kafka-lag-exporter'
     name: Release
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+      packages: write
     strategy:
       fail-fast: false
     steps:
@@ -49,7 +52,7 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
-          github_token: ${{ github.token }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: master
 
       - name: Push GitHub release artifact
